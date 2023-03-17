@@ -1,124 +1,282 @@
 <?php
-define('PUN_ROOT', dirname(__FILE__).'/forums/');
 
+/**
+ * Copyright (C) 2008-2012 FluxBB
+ * based on code by Rickard Andersson copyright (C) 2002-2008 PunBB
+ * License: http://www.gnu.org/licenses/gpl.html GPL version 2 or higher
+ */
+
+define('PUN_ROOT', dirname(__FILE__).'/');
 require PUN_ROOT.'include/common.php';
-if($_POST['redirect'] == "forums"){
-	
-	if (!$pun_user['is_guest']) {
-	header("Location: forums/");
-	} else {
-?>
-<!DOCTYPE html>
-<html lang="en-US">
-<head>
-	<meta charset="UTF-8" />
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-	<meta name="robots" content="noindex, nofollow" />
-    <title>GameSense</title>
-	<link href="https://fonts.googleapis.com/css?family=Raleway:900,400" rel="stylesheet" type="text/css" />
-	<style type="text/css">#title h1, body{font-weight:400;color:#eee}.divide,.outer{position:absolute;width:100%}#title h1,.trifecta,p{text-align:center}body,html{margin:0;padding:0;height:100%}body{font-family:Raleway,Helvetica Neue,Helvetica,sans-serif;font-size:14px;background-color:#101010}p{font-size:1.75em;color:#ddd;margin:10px 0 0}.divide{top:0;padding:0;margin:0;background:#1e5799;background:-moz-linear-gradient(left,#1e5799 0,#f300ff 50%,#e0ff00 100%);background:-webkit-gradient(linear,left top,right top,color-stop(0,#1e5799),color-stop(50%,#f300ff),color-stop(100%,#e0ff00));background:-webkit-linear-gradient(left,#1e5799 0,#f300ff 50%,#e0ff00 100%);background:-o-linear-gradient(left,#1e5799 0,#f300ff 50%,#e0ff00 100%);background:-ms-linear-gradient(left,#1e5799 0,#f300ff 50%,#e0ff00 100%);background:linear-gradient(to right,#1e5799 0,#f300ff 50%,#e0ff00 100%);filter:progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e5799', endColorstr='#e0ff00', GradientType=1 );height:3px;border-bottom:1px solid #000}.trifecta .one,.trifecta .two,.trifecta>div{background-color:#eee}#title h1{margin:0 auto;padding:0;font-size:62pt;height:120px}#title span{color:#00BFFF}.outer{display:table;height:100%}.middle{display:table-cell;vertical-align:middle}.inner{margin-left:auto;margin-right:auto;width:400px}.trifecta{margin:0 auto;font-size:26px;width:80px}.trifecta>div{display:inline-block;width:14px;height:14px;border-radius:100%;-webkit-animation:bdelay 1.4s infinite ease-in-out both;animation:bdelay 1.4s infinite ease-in-out both}.trifecta .one{-webkit-animation-delay:-.32s;animation-delay:-.32s}.trifecta .two{-webkit-animation-delay:-.16s;animation-delay:-.16s}@-webkit-keyframes bdelay{0%,100%,80%{-webkit-transform:scale(0)}40%{-webkit-transform:scale(1)}}@keyframes bdelay{0%,100%,80%{-webkit-transform:scale(0);transform:scale(0)}40%{transform:scale(1);-webkit-transform:scale(1)}}</style>
-	<script type="text/javascript">
-	<![CDATA[
-	(function(){
-		var a = function() {try{return !!window.addEventListener} catch(e) {return !1} },
-		b = function(b, c) {a() ? document.addEventListener("DOMContentLoaded", b, c) : document.attachEvent("onreadystatechange", b)};
-		b(function(){
-			var d = new Date();
-			d.setTime(d.getTime() + (30000));
-			document.cookie = "bypass=1; expires=" + d.toUTCString() + "; path=/";
-			var a = document.getElementById('gs-content');a.style.display = 'block';
-			setTimeout(function(){
-				var t,r,a,k,i,f, p6gdn4Q={"eNG8aiA":+((!+[]+!![]+[])+(!+[]+!![]+[])+(!+[]+!![]+!![]+!![]+!![]+[])+(!+[]+!![]+!![]+!![]+!![]+!![]+!![]+[])+(!+[]+!![]+!![]+!![])+(!+[]+!![]+!![]+!![]+!![]+!![]+!![]+[])+(+[])+(!+[]+!![]+!![]+!![]+!![]+!![]+!![]+!![])+(!+[]+!![]+!![]))/+((+!![])+(!+[]+!![]+!![]+!![]+!![]+!![]+[])+(!+[]+!![]+!![])+(!+[]+!![]+!![]+[])+(!+[]+!![]+!![]+!![]+!![]+!![])+(!+[]+!![]+!![]+[])+(!+[]+!![])+(!+[]+!![]+!![]+[])+(!+[]+!![]+[]))};
-				t = document.createElement('div');
-				t.innerHTML="<a href='/'>x</a>";
-				t = t.firstChild.href;r = t.match(/https?:\/\//)[0];
-				t = t.substr(r.length); t = t.substr(0,t.length-1);
-				a = document.getElementById('redirect');
-				f = document.getElementById('challenge-form');
-				;p6gdn4Q.eNG8aiA*=+((!+[]+!![]+!![]+!![]+!![]+!![]+[])+(!+[]+!![]+!![]+!![]+!![]+!![]+!![])+(!+[]+!![]+!![]+!![]+!![]+[])+(!+[]+!![]+!![]+!![]+!![]+!![]+!![])+(+!![])+(!+[]+!![]+!![]+!![]+!![]+!![]+!![])+(!+[]+!![]+!![]+!![]+!![]+!![]+!![]+[])+(!+[]+!![]+!![]+!![]+!![]+!![])+(!+[]+!![]+!![]+!![]+!![]))/+((+!![])+(!+[]+!![]+[])+(+[])+(!+[]+!![]+!![]+[])+(!+[]+!![]+!![])+(!+[]+!![]+!![]+!![]+[])+(!+[]+!![])+(!+[]+!![]+!![]+!![]+[])+(!+[]+!![]+!![]+!![]+!![]+!![]+!![]+[]));a.value = +p6gdn4Q.eNG8aiA.toFixed(10); '; 121'
-				f.action += location.hash;
-				f.submit();
-			}, 4000);
-		}, false);
-	})();
-	]]>
-	</script>
-</head>
-<body>
-<div class="divide"></div>
-<div class="outer"><div class="middle"><div class="inner">
-	<div id="title">
-		<h1>Game<span>Sense</span></h1>
-	</div>
-	<noscript><h1 data-translate="turn_on_js" style="color:#bd2426;">Please turn JavaScript on and reload the page.</h1></noscript>
-	<div id="gs-content" style="display:none">
-		<p>Please wait...</p>
-		<div class="trifecta">
-			<div class="one"></div>
-			<div class="two"></div>
-			<div class="three"></div>
-		</div>
-		<form id="challenge-form" action="forums/" method="post">
-			<input type="hidden" id="redirect" name="redirect">
-		</form>
-	</div>
-</div></div></div>
-</body>
-</html>
 
-<?php
+if ($pun_user['g_read_board'] == '0')
+	message($lang_common['No view'], false, '403 Forbidden');
+
+
+// Load the index.php language file
+require PUN_ROOT.'lang/'.$pun_user['language'].'/index.php';
+
+// Get list of forums and topics with new posts since last visit
+if (!$pun_user['is_guest'])
+{
+	$result = $db->query('SELECT f.id, f.last_post FROM '.$db->prefix.'forums AS f LEFT JOIN '.$db->prefix.'forum_perms AS fp ON (fp.forum_id=f.id AND fp.group_id='.$pun_user['g_id'].') WHERE (fp.read_forum IS NULL OR fp.read_forum=1) AND f.last_post>'.$pun_user['last_visit']) or error('Unable to fetch forum list', __FILE__, __LINE__, $db->error());
+
+	if ($db->num_rows($result))
+	{
+		$forums = $new_topics = array();
+		$tracked_topics = get_tracked_topics();
+
+		while ($cur_forum = $db->fetch_assoc($result))
+		{
+			if (!isset($tracked_topics['forums'][$cur_forum['id']]) || $tracked_topics['forums'][$cur_forum['id']] < $cur_forum['last_post'])
+				$forums[$cur_forum['id']] = $cur_forum['last_post'];
+		}
+
+		if (!empty($forums))
+		{
+			if (empty($tracked_topics['topics']))
+				$new_topics = $forums;
+			else
+			{
+				$result = $db->query('SELECT forum_id, id, last_post FROM '.$db->prefix.'topics WHERE forum_id IN('.implode(',', array_keys($forums)).') AND last_post>'.$pun_user['last_visit'].' AND moved_to IS NULL') or error('Unable to fetch new topics', __FILE__, __LINE__, $db->error());
+
+				while ($cur_topic = $db->fetch_assoc($result))
+				{
+					if (!isset($new_topics[$cur_topic['forum_id']]) && (!isset($tracked_topics['forums'][$cur_topic['forum_id']]) || $tracked_topics['forums'][$cur_topic['forum_id']] < $forums[$cur_topic['forum_id']]) && (!isset($tracked_topics['topics'][$cur_topic['id']]) || $tracked_topics['topics'][$cur_topic['id']] < $cur_topic['last_post']))
+						$new_topics[$cur_topic['forum_id']] = $forums[$cur_topic['forum_id']];
+				}
+			}
+		}
+	}
 }
+
+if ($pun_config['o_feed_type'] == '1')
+	$page_head = array('feed' => '<link rel="alternate" type="application/rss+xml" href="extern.php?action=feed&amp;type=rss" title="'.$lang_common['RSS active topics feed'].'" />');
+else if ($pun_config['o_feed_type'] == '2')
+	$page_head = array('feed' => '<link rel="alternate" type="application/atom+xml" href="extern.php?action=feed&amp;type=atom" title="'.$lang_common['Atom active topics feed'].'" />');
+
+$forum_actions = array();
+
+// Display a "mark all as read" link
+if (!$pun_user['is_guest'])
+	$forum_actions[] = '<a href="misc.php?action=markread&amp;csrf_token='.pun_csrf_token().'">'.$lang_common['Mark all as read'].'</a>';
+
+$page_title = array(pun_htmlspecialchars($pun_config['o_board_title']));
+define('PUN_ALLOW_INDEX', 1);
+define('PUN_ACTIVE_PAGE', 'index');
+if($pun_user['group_id'] != 4){
+require PUN_ROOT.'header.php';
+//require PUN_ROOT.'include/ajax_chat.php';
+require PUN_ROOT.'chatbox.php';
 } else {
- ?>
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8" />
-
-	<!-- icon -->
-	<link href="/favicon.ico" rel="icon" />
-	<link href="/favicon.ico" rel="shortcut icon" />
-	<!-- styles -->
-	<link href="https://fonts.googleapis.com/css?family=Raleway:900,400" rel="stylesheet" type="text/css" />
-	<link href="/static/css/style.css" rel="stylesheet" type="text/css" />
-	<link href="/static/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
-	<link href="/static/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-	<!-- javascript -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-	<script src="/static/js/scrollreveal.min.js"></script>
-
-	<title>GameSense</title>
-</head>
-<body>
-	<nav class="gs-navbar">
-		<div class="gs-nav-container" data-nosnippet="true">
-			<ul>
-				<li class="active"><a href="/"><i class="fa fa-home"></i></a></li>
-				<li><a href="https://gamesense.pw/forums/">FORUMS</a></li>
-			</ul>
-		</div>
-	</nav>
-	
-	<div class="divide"></div>
-	
-	<div class="container" id="jumbo-container">
-		<div class="jumbotron" id="jumbo">
-			<div id="header" data-sr="enter bottom and scale up 50% over 1s no reset">
-			<div id="title">
-				<h1>game<span>sense</span></h1>
-				<h2>BETA</h2>
-			</div>
-<script>
-	window.sr = ScrollReveal();
-	sr.reveal('#header', {
-		duration: 1500,
-		delay: 0,
-		scale: 0.1
-	});
-</script>
-</body>
-</html>
-<?php
+	require PUN_ROOT.'header.php';
 }
+
+// Print the categories and forums
+$result = $db->query('SELECT u.group_id, u.id AS uid, c.id AS cid, c.cat_name, f.id AS fid, f.forum_name, f.forum_desc, f.redirect_url, f.moderators, f.num_topics, f.num_posts, f.last_post, f.last_post_id, f.last_poster FROM '.$db->prefix.'categories AS c INNER JOIN '.$db->prefix.'forums AS f ON c.id=f.cat_id LEFT JOIN '.$db->prefix.'forum_perms AS fp ON (fp.forum_id=f.id AND fp.group_id='.$pun_user['g_id'].') LEFT JOIN '.$db->prefix.'users AS u ON (f.last_poster=u.username) WHERE fp.read_forum IS NULL OR fp.read_forum=1 ORDER BY c.disp_position, c.id, f.disp_position', true) or error('Unable to fetch category/forum list', __FILE__, __LINE__, $db->error());
+
+$cur_category = 0;
+if($pun_user['group_id'] != 4){
+$cat_count = 1;
+} else {
+	$cat_count = 0;
+}
+$forum_count = 0;
+while ($cur_forum = $db->fetch_assoc($result))
+{
+	$moderators = '';
+
+	if ($cur_forum['cid'] != $cur_category) // A new category since last iteration?
+	{
+		if ($cur_category != 0)
+			echo "\t\t\t".'</tbody>'."\n\t\t\t".'</table>'."\n\t\t".'</div>'."\n\t".'</div>'."\n".'</div>'."\n\n";
+
+		++$cat_count;
+		$forum_count = 0;
+
 ?>
+<div id="idx<?php echo $cat_count ?>" class="blocktable">
+	<h2><span><?php echo pun_htmlspecialchars($cur_forum['cat_name']) ?></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<table>
+			<thead>
+				<tr>
+					<th class="tcl" scope="col"><?php echo $lang_common['Forum'] ?></th>
+					<th class="tcr" scope="col"><?php echo $lang_common['Last post'] ?></th>
+				</tr>
+			</thead>
+			<tbody>
+<?php
+
+		$cur_category = $cur_forum['cid'];
+	}
+
+	++$forum_count;
+	$item_status = ($forum_count % 2 == 0) ? 'roweven' : 'rowodd';
+	$forum_field_new = '';
+	$icon_type = 'icon';
+
+	// Are there new posts since our last visit?
+	if (isset($new_topics[$cur_forum['fid']]))
+	{
+		$item_status .= ' inew';
+		$forum_field_new = '<span class="newtext">[ <a href="search.php?action=show_new&amp;fid='.$cur_forum['fid'].'">'.$lang_common['New posts'].'</a> ]</span>';
+		$icon_type = 'icon icon-new';
+	}
+
+	// Is this a redirect forum?
+	if ($cur_forum['redirect_url'] != '')
+	{
+		$forum_field = '<h3><span class="redirtext">'.$lang_index['Link to'].'</span> <a href="'.pun_htmlspecialchars($cur_forum['redirect_url']).'" title="'.$lang_index['Link to'].' '.pun_htmlspecialchars($cur_forum['redirect_url']).'">'.pun_htmlspecialchars($cur_forum['forum_name']).'</a></h3>';
+		$num_topics = $num_posts = '-';
+		$item_status .= ' iredirect';
+		$icon_type = 'icon';
+	}
+	else
+	{
+		$forum_field = '<h3><a href="viewforum.php?id='.$cur_forum['fid'].'">'.pun_htmlspecialchars($cur_forum['forum_name']).'</a>'.(!empty($forum_field_new) ? ' '.$forum_field_new : '').'</h3>';
+		$num_topics = $cur_forum['num_topics'];
+		$num_posts = $cur_forum['num_posts'];
+	}
+
+	if ($cur_forum['forum_desc'] != '')
+		$forum_field .= "\n\t\t\t\t\t\t\t\t".'<div class="forumdesc">'.$cur_forum['forum_desc'].'</div>';
+
+	// If there is a last_post/last_poster
+	if ($cur_forum['last_post'] != ''){
+		$tfid = $cur_forum['last_post_id'];
+		
+			$cur_forum12 = $db->query("SELECT `topic_id` FROM `posts` WHERE `id`='$tfid'");
+$cur_forum12 = $db->fetch_assoc($cur_forum12);
+	$cur_forum12 = $cur_forum12['topic_id'];	
+	$cur_forum1 = $db->query("SELECT `subject` FROM `topics` WHERE `id`='$cur_forum12'");
+$cur_forum1 = $db->fetch_assoc($cur_forum1);
+$cur_forum1 = $cur_forum1['subject'];
+	$last_post = '<a href="viewtopic.php?pid='.$cur_forum['last_post_id'].'#p'.$cur_forum['last_post_id'].'">'.$cur_forum1.'</a> <span class="byuser">'.format_time($cur_forum['last_post']).'</span>	 <span class="byuser">'.$lang_common['by'].' '.pun_htmlspecialchars($cur_forum['last_poster']).'</span>';
+	
+	}else if ($cur_forum['redirect_url'] != '')
+		$last_post = '- - -';
+	else
+		$last_post = $lang_common['Never'];
+
+	if ($pun_user['is_admmod'] && $cur_forum['moderators'] != '')
+	{
+		$mods_array = unserialize($cur_forum['moderators']);
+		$moderators = array();
+
+		foreach ($mods_array as $mod_username => $mod_id)
+		{
+			if ($pun_user['g_view_users'] == '1')
+				$moderators[] = '<a href="profile.php?id='.$mod_id.'">'.pun_htmlspecialchars($mod_username).'</a>';
+			else
+				$moderators[] = pun_htmlspecialchars($mod_username);
+		}
+		$moderators = "\t\t\t\t\t\t\t\t".'<p class="modlist">(<em>'.$lang_common['Moderated by'].'</em> '.implode(', ', $moderators).')</p>'."\n";
+	}
+
+?>
+		<tr class="<?php echo $item_status ?>">
+			<td class="tcl">
+				<ul>
+					<li class="rowlist">
+						<div class="<?php echo $icon_type ?>"><div class="nosize"><?php echo forum_number_format($forum_count) ?></div></div>
+					</li>
+					<li class="rowlist">
+						<div class="tclcon">
+							<div>
+								<?php echo $forum_field."\n".$moderators ?>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</td>
+				<td class="tcr"><?php echo $last_post ?></td>
+		</tr>
+<?php
+
+}
+
+// Did we output any categories and forums?
+if ($cur_category > 0)
+	echo "\t\t\t".'</tbody>'."\n\t\t\t".'</table>'."\n\t\t".'</div>'."\n\t".'</div>'."\n".'</div>'."\n\n";
+else
+	echo '<div id="idx0" class="block"><div class="box"><div class="inbox"><p>'.$lang_index['Empty board'].'</p></div></div></div>';
+
+// Collect some statistics from the database
+if (file_exists(FORUM_CACHE_DIR.'cache_users_info.php'))
+	include FORUM_CACHE_DIR.'cache_users_info.php';
+
+if (!defined('PUN_USERS_INFO_LOADED'))
+{
+	if (!defined('FORUM_CACHE_FUNCTIONS_LOADED'))
+		require PUN_ROOT.'include/cache.php';
+
+	generate_users_info_cache();
+	require FORUM_CACHE_DIR.'cache_users_info.php';
+}
+
+if (!empty($forum_actions))
+{
+
+?>
+<div class="linksb">
+	<div class="inbox crumbsplus">
+		<p class="subscribelink clearb"><?php echo implode(' - ', $forum_actions); ?></p>
+	</div>
+</div>
+<?php
+
+}
+
+?>
+<div id="brdstats" class="block">
+	<h2><span><?php echo $lang_index['Board info'] ?></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<dl class="conr">
+				<dt><strong><?php echo $lang_index['Board stats'] ?></strong></dt>
+			</dl>
+			<dl class="conl">
+				<dt><strong><?php echo $lang_index['User info'] ?></strong></dt>
+<?php
+
+if ($pun_config['o_users_online'] == '1')
+{
+	// Fetch users online info and generate strings for output
+	$users = array();
+	$result = $db->query('SELECT user_id, ident, u.group_id FROM '.$db->prefix.'online LEFT JOIN '.$db->prefix.'users AS u ON (ident=u.username) WHERE idle=0 ORDER BY ident', true) or error('Unable to fetch online list', __FILE__, __LINE__, $db->error());
+
+	while ($pun_user_online = $db->fetch_assoc($result))	{
+		if ($pun_user_online['user_id'] > 1)	{
+			if ($pun_user['g_view_users'] == '1')	{
+				$users[] = "\n\t\t\t\t".'<dd><a href="profile.php?id='.$pun_user_online['user_id'].'">'.colorize_group($pun_user_online['ident'], $pun_user_online['group_id']).'</a>';
+			}
+			else	{
+				$users[] = "\n\t\t\t\t".'<dd>'.colorize_group($pun_user_online['ident'], $pun_user_online['group_id']);
+			}
+		}
+	}
+
+	$num_users = count($users);
+	echo "\t\t\t\t".'<dd><span>'.sprintf($lang_index['Users online'], '<strong>'.forum_number_format($num_users).'</strong>').'</span></dd>'."\n\t\t\t".'</dl>'."\n";
+
+
+	if ($num_users > 0)
+		echo "\t\t\t".'<dl id="onlinelist" class="clearb">'."\n\t\t\t\t".'<dt><strong>'.$lang_index['Online'].' </strong></dt>'."\t\t\t\t".implode(',</dd> ', $users).'</dd>'."\n\t\t\t".'</dl>'."\n";
+	else
+		echo "\t\t\t".'<div class="clearer"></div>'."\n";
+
+}
+else
+	echo "\t\t\t".'</dl>'."\n\t\t\t".'<div class="clearer"></div>'."\n";
+
+
+?>
+		</div>
+	</div>
+</div>
+<?php
+
+$footer_style = 'index';
+require PUN_ROOT.'footer.php';
